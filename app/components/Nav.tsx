@@ -1,7 +1,7 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 
 export default function NavHeader() {
   return (
@@ -30,5 +30,5 @@ export default function NavHeader() {
         <Link href="/contact" className="hover:text-green-500">Contact</Link>
       </nav>
     </header>
-  );
+  )
 }
