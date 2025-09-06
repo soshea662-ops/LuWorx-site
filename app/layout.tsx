@@ -1,7 +1,8 @@
 import "./globals.css"
-import Nav from "./components/NavHeader"
+import type { Metadata } from "next"
+import NavHeader from "./components/NavHeader"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "LuWorx",
   description: "Digital SaaS and marketing solutions",
 }
@@ -13,21 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-       <header style={{ 
-  background: "black", 
-  padding: "1rem", 
-  position: "sticky", 
-  top: 0, 
-  zIndex: 50 
-}}>
-  <Nav />
-</header>
-
-        <main>{children}</main>
-        <footer style={{ background: "black", color: "white", textAlign: "center", padding: "1rem", marginTop: "2rem" }}>
-          © LuWorx. All rights reserved.
-        </footer>
+      <body className="bg-black text-white">
+        <NavHeader />
+        {children}
       </body>
     </html>
   )
