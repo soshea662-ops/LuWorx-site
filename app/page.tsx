@@ -2,13 +2,14 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card"
 import { Button } from "./components/ui/button"
-import { motion } from "framer-motion"
+import NavHeader from "./components/NavHeader"  // ✅ import your navbar
 import Link from "next/link"
-import NavHeader from "./components/Nav"
+import { motion } from "framer-motion"
 
 export default function LuWorxHomepage() {
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* ✅ Navbar only once */}
       <NavHeader />
 
       {/* Hero Section */}
