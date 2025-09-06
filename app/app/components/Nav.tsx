@@ -2,9 +2,11 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { useState } from "react"
 
 export default function Nav() {
   const pathname = usePathname()
+  const [isOpen, setIsOpen] = useState(false)
 
   const links = [
     { href: "/", label: "Home" },
@@ -15,13 +17,8 @@ export default function Nav() {
 
   return (
     <nav>
-      <ul style={{
-        listStyle: "none",
-        display: "flex",
-        gap: "20px",
-        margin: 0,
-        padding: 0,
-      }}>
+      {/* Desktop menu */}
+      <ul className="nav-links">
         {links.map(link => (
           <li key={link.href}>
             <Link
@@ -33,7 +30,32 @@ export default function Nav() {
           </li>
         ))}
       </ul>
+
+      {/* Mobile hamburger */}
+      <button
+        className="nav-toggle"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label="Toggle menu"
+      >
+        ☰
+      </button>
+
+      {/* Mobile menu dropdown */}
+      {isOpen && (
+        <ul className="nav-mobile">
+          {links.map(link => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className={`nav-link ${pathname === link.href ? "active" : ""}`}
+                onClick={() => setIsOpen(false)} // close menu on click
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </nav>
   )
 }
-
