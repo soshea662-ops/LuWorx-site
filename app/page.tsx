@@ -6,12 +6,6 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import NavHeader from "./components/NavHeader"
 
-export default function LuWorxHomepage() {
-  return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Navbar */}
-      <NavHeader />
-
       {/* Hero Section */}
       <section className="text-center py-20 bg-black text-white">
         <motion.h1
