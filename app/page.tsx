@@ -21,18 +21,7 @@ export default function LuWorxHomepage() {
         <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
           Building digital solutions across SaaS, Marketing, and Media.
         </p>
-        <Button asChild size="lg" className="rounded-2xl bg-green-600 text-white font-semibold">
-          <Link href="#divisions">Explore Our Divisions</Link>
-        </Button>
-      </section>
-
-      {/* Our Divisions */}
-      <section id="divisions" className="py-20">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Divisions</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-          {/* Example cards here... */}
-        </div>
-      </section>
+        
 
       {/* Footer */}
       <footer className="py-8 bg-black text-center border-t border-gray-700">
