@@ -37,7 +37,10 @@ export default function LuWorxHomepage() {
 </motion.h1>
 
         <p>Building digital solutions across SaaS, Marketing, and Media.</p>
-        <Button asChild ...><Link href="#divisions">Explore Our Divisions</Link></Button>
+        <Button asChild size="lg" className="rounded-2xl bg-white text-green-800 font-semibold">
+  <Link href="#divisions">Explore Our Divisions</Link>
+</Button>
+
       </section>
 
       {/* Our Divisions */}
