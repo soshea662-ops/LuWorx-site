@@ -4,20 +4,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card"
 import { Button } from "./components/ui/button"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import Image from "next/image"
+import NavHeader from "./components/NavHeader"
 
 export default function LuWorxHomepage() {
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* Navbar */}
+      <NavHeader />
+
       {/* Hero Section */}
       <section className="text-center py-20 bg-black text-white">
-        <Image
-          src="/logo.png"
-          alt="LuWorx Logo"
-          width={100}
-          height={100}
-          className="mx-auto mb-6"
-        />
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
