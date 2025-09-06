@@ -1,61 +1,34 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { useState } from "react"
+import Image from "next/image";
+import Link from "next/link";
 
-export default function Nav() {
-  const pathname = usePathname()
-  const [isOpen, setIsOpen] = useState(false)
-
-  const links = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/explore", label: "Explore" },
-    { href: "/contact", label: "Contact" },
-  ]
-
+export default function NavHeader() {
   return (
-    <nav>
-      {/* Desktop menu */}
-      <ul className="nav-links">
-        {links.map(link => (
-          <li key={link.href}>
-            <Link
-              href={link.href}
-              className={`nav-link ${pathname === link.href ? "active" : ""}`}
-            >
-              {link.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <header className="flex items-center justify-between px-8 py-4 bg-black text-white shadow-md">
+      {/* Logo + Brand */}
+      <div className="flex items-center space-x-3">
+        <Link href="/">
+          <Image
+            src="/logo.png"
+            alt="LuWorx Logo"
+            width={40}
+            height={40}
+            className="rounded"
+          />
+        </Link>
+        <Link href="/" className="text-2xl font-bold hover:text-green-500">
+          LuWorx
+        </Link>
+      </div>
 
-      {/* Mobile hamburger */}
-      <button
-        className="nav-toggle"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="Toggle menu"
-      >
-        ☰
-      </button>
-
-      {/* Mobile menu dropdown */}
-      {isOpen && (
-        <ul className="nav-mobile">
-          {links.map(link => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className={`nav-link ${pathname === link.href ? "active" : ""}`}
-                onClick={() => setIsOpen(false)} // close menu on click
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
-    </nav>
-  )
+      {/* Navigation Links */}
+      <nav className="space-x-8 hidden md:flex">
+        <Link href="/" className="hover:text-green-500">Home</Link>
+        <Link href="/about" className="hover:text-green-500">Our Story</Link>
+        <Link href="/explore" className="hover:text-green-500">Explore</Link>
+        <Link href="/contact" className="hover:text-green-500">Contact</Link>
+      </nav>
+    </header>
+  );
 }
