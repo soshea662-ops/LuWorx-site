@@ -1,103 +1,215 @@
-import Image from "next/image";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
-export default function Home() {
+// --- Shared Navigation Header ---
+function NavHeader() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <header className="flex items-center justify-between px-6 py-4 bg-green-900 text-white shadow-md">
+      <Link href="/" className="text-xl font-bold">LuWorx</Link>
+      <nav className="space-x-6 hidden md:flex">
+        <Link href="/">Home</Link>
+        <Link href="/about">About</Link>
+        <Link href="/digital">Digital Marketing</Link>
+        <Link href="/saas">SaaS</Link>
+        <Link href="/media">Media</Link>
+        <Link href="/contact">Contact</Link>
+      </nav>
+    </header>
+  );
+}
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+// --- Homepage ---
+export default function LuWorxHomepage() {
+  return (
+    <div className="min-h-screen bg-white text-gray-800">
+      <NavHeader />
+      {/* Hero Section */}
+      <section className="text-center py-20 bg-gradient-to-r from-green-900 to-green-700 text-white">
+        <motion.h1
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-6xl font-bold mb-6"
+        >
+          LuWorx: Many Skills. One Vision.
+        </motion.h1>
+        <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+          Building digital solutions across SaaS, Marketing, and Media.
+        </p>
+        <Button asChild size="lg" className="rounded-2xl bg-white text-green-800 font-semibold">
+          <Link href="#divisions">Explore Our Divisions</Link>
+        </Button>
+      </section>
+
+      {/* Who We Are */}
+      <section className="py-16 px-6 max-w-5xl mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-4">Who We Are</h2>
+        <p className="text-lg text-gray-600">
+          LuWorx LLC is a versatile digital innovation company rooted in creativity, 
+          technology, and a Celtic-inspired spirit of mastery. We deliver solutions 
+          in SaaS, digital marketing, and publishing that empower businesses and individuals.
+        </p>
+      </section>
+
+      {/* Divisions Grid */}
+      <section id="divisions" className="py-20 bg-gray-50">
+        <h2 className="text-3xl font-bold text-center mb-12">Our Divisions</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
+          {/* Digital Marketing */}
+          <Card className="rounded-2xl shadow-lg hover:shadow-xl transition">
+            <CardHeader>
+              <CardTitle>Digital Marketing</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-4 text-gray-600">
+                SEO, SEM, web design, and social media campaigns to help small 
+                businesses grow their presence.
+              </p>
+              <Button asChild className="w-full bg-green-800 text-white rounded-2xl">
+                <Link href="/digital">Learn More</Link>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* SaaS */}
+          <Card className="rounded-2xl shadow-lg hover:shadow-xl transition">
+            <CardHeader>
+              <CardTitle>SaaS Solutions</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-4 text-gray-600">
+                Innovative tools like PursuitPro for AEC proposals and FraudShield for 
+                fraud prevention — scalable SaaS for modern needs.
+              </p>
+              <Button asChild className="w-full bg-green-800 text-white rounded-2xl">
+                <Link href="/saas">Discover SaaS</Link>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Media */}
+          <Card className="rounded-2xl shadow-lg hover:shadow-xl transition">
+            <CardHeader>
+              <CardTitle>Media & Publishing</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-4 text-gray-600">
+                From KDP puzzle books to digital courses and content, we create 
+                knowledge-driven products.
+              </p>
+              <Button asChild className="w-full bg-green-800 text-white rounded-2xl">
+                <Link href="/media">Explore Media</Link>
+              </Button>
+            </CardContent>
+          </Card>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Why LuWorx */}
+      <section className="py-16 px-6 max-w-5xl mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-4">Why LuWorx?</h2>
+        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          We combine creativity, technology, and a passion for innovation. From SaaS 
+          automation to digital storytelling, we are dedicated to helping you succeed 
+          across every digital frontier.
+        </p>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 bg-green-900 text-white text-center">
+        <p>&copy; {new Date().getFullYear()} LuWorx LLC. All rights reserved.</p>
+        <div className="mt-4 space-x-6">
+          <Link href="/terms">Terms</Link>
+          <Link href="/privacy">Privacy Policy</Link>
+          <Link href="/contact">Contact</Link>
+        </div>
       </footer>
+    </div>
+  );
+}
+
+// --- Digital Marketing Landing Page ---
+export function DigitalMarketingPage() {
+  return (
+    <div className="min-h-screen bg-white text-gray-800">
+      <NavHeader />
+      <div className="px-6 py-16 max-w-5xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">LuWorx Digital Marketing</h1>
+        <p className="text-lg text-gray-600 mb-10">
+          We provide SEO, SEM, branding, and digital campaigns that help businesses stand out 
+          and connect with their audience. Our strategies are designed for measurable results.
+        </p>
+        <ul className="list-disc list-inside space-y-3 text-gray-700">
+          <li>Search Engine Optimization (SEO)</li>
+          <li>Pay-Per-Click (PPC) Campaigns</li>
+          <li>Web Design & Brand Identity</li>
+          <li>Social Media Management</li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+// --- SaaS Landing Page ---
+export function SaaSPage() {
+  return (
+    <div className="min-h-screen bg-white text-gray-800">
+      <NavHeader />
+      <div className="px-6 py-16 max-w-5xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">LuWorx SaaS Solutions</h1>
+        <p className="text-lg text-gray-600 mb-10">
+          We build scalable SaaS products tailored to solve modern challenges. Our flagship 
+          tools streamline workflows and protect communities.
+        </p>
+        <div className="space-y-6">
+          <Card className="rounded-2xl shadow-md">
+            <CardHeader>
+              <CardTitle>PursuitPro (AEC Workspace)</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>
+                Proposal automation software designed for civil engineering and AEC firms. 
+                Save time, reduce workload, and win more RFPs.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="rounded-2xl shadow-md">
+            <CardHeader>
+              <CardTitle>FraudShield</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>
+                AI-powered scam protection service for seniors and families. Stop scams 
+                before they reach vulnerable users.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// --- Media & Publishing Landing Page ---
+export function MediaPage() {
+  return (
+    <div className="min-h-screen bg-white text-gray-800">
+      <NavHeader />
+      <div className="px-6 py-16 max-w-5xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">LuWorx Media & Publishing</h1>
+        <p className="text-lg text-gray-600 mb-10">
+          We create knowledge-driven products that inspire, educate, and entertain. From 
+          publishing to e-learning, our media division builds content that lasts.
+        </p>
+        <ul className="list-disc list-inside space-y-3 text-gray-700">
+          <li>KDP Puzzle & Activity Books</li>
+          <li>Educational eBooks & Guides</li>
+          <li>Digital Microlearning Courses</li>
+          <li>Content Marketing Assets</li>
+        </ul>
+      </div>
     </div>
   );
 }
