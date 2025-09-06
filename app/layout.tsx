@@ -14,9 +14,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header style={{ background: "black", padding: "1rem" }}>
-          <Nav />
-        </header>
+       <header style={{ 
+  background: "black", 
+  padding: "1rem", 
+  position: "sticky", 
+  top: 0, 
+  zIndex: 50 
+}}>
+  <Nav />
+</header>
+
         <main>{children}</main>
         <footer style={{ background: "black", color: "white", textAlign: "center", padding: "1rem", marginTop: "2rem" }}>
           © LuWorx. All rights reserved.
