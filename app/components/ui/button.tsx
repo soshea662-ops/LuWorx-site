@@ -1,5 +1,4 @@
 import * as React from "react"
-import Link from "next/link"
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   asChild?: boolean
@@ -19,11 +18,7 @@ export function Button({ asChild, className = "", size = "md", children, ...prop
   const styles = `inline-block rounded-md font-medium transition ${sizeClasses} ${className}`
 
   if (asChild) {
-    return (
-      <Link href="#" className={styles}>
-        {children}
-      </Link>
-    )
+    return <span className={styles}>{children}</span>
   }
 
   return (
@@ -32,4 +27,3 @@ export function Button({ asChild, className = "", size = "md", children, ...prop
     </button>
   )
 }
-
