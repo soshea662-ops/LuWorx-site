@@ -1,21 +1,16 @@
 import "./globals.css"
-import type { Metadata } from "next"
 import NavHeader from "./components/NavHeader"
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "LuWorx",
-  description: "Digital SaaS and marketing solutions",
+  description: "Many Skills. One Vision.",
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className="bg-black text-white">
-        <NavHeader />
+        <NavHeader />   {/* ✅ Navbar here, shows on every page */}
         {children}
       </body>
     </html>
