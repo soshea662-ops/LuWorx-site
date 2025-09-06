@@ -21,12 +21,13 @@ export default function LuWorxHomepage() {
         <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
           Building digital solutions across SaaS, Marketing, and Media.
         </p>
-        
+      </section>
 
       {/* Footer */}
-                 <footer className="py-8 bg-black text-center border-t border-gray-700">
+      <footer className="py-8 bg-black text-center border-t border-gray-700">
         <p>&copy; {new Date().getFullYear()} LuWorx LLC. All rights reserved.</p>
       </footer>
     </div>
   );
 }
+
