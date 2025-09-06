@@ -1,5 +1,5 @@
 import "./globals.css"
-import Nav from "./components/NavHeader"
+import NavHeader from "./components/NavHeader"
 
 export const metadata = {
   title: "LuWorx",
