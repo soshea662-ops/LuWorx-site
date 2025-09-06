@@ -1,7 +1,5 @@
 "use client"
 
-import Nav from "../components/NavHeader"
-
 export default function DigitalMarketingPage() {
   return (
     <div className="min-h-screen bg-white text-gray-800">
