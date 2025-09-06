@@ -1,7 +1,7 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function NavHeader() {
   return (
@@ -10,7 +10,7 @@ export default function NavHeader() {
       <div className="flex items-center space-x-3">
         <Link href="/">
           <Image
-            src="/logo.png"
+            src="/logo.png"   // ✅ from /public/logo.png
             alt="LuWorx Logo"
             width={40}
             height={40}
@@ -32,3 +32,4 @@ export default function NavHeader() {
     </header>
   )
 }
+
