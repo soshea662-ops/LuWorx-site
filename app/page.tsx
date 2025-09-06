@@ -27,7 +27,15 @@ export default function LuWorxHomepage() {
 
       {/* Hero Section */}
       <section className="text-center py-20 bg-gradient-to-r from-green-900 to-green-700 text-white">
-        <motion.h1 ...>LuWorx: Many Skills. One Vision.</motion.h1>
+       <motion.h1
+  initial={{ opacity: 0, y: -30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="text-4xl md:text-6xl font-bold mb-6"
+>
+  LuWorx: Many Skills. One Vision.
+</motion.h1>
+
         <p>Building digital solutions across SaaS, Marketing, and Media.</p>
         <Button asChild ...><Link href="#divisions">Explore Our Divisions</Link></Button>
       </section>
