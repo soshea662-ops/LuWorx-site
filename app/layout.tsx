@@ -23,18 +23,10 @@ export default function RootLayout({
               margin: 0,
               padding: 0,
             }}>
-              <li>
-                <Link className="nav-link" href="/">Home</Link>
-              </li>
-              <li>
-                <Link className="nav-link" href="/about">About</Link>
-              </li>
-              <li>
-                <Link className="nav-link" href="/explore">Explore</Link>
-              </li>
-              <li>
-                <Link className="nav-link" href="/contact">Contact</Link>
-              </li>
+              <li><Link className="nav-link" href="/">Home</Link></li>
+              <li><Link className="nav-link" href="/about">About</Link></li>
+              <li><Link className="nav-link" href="/explore">Explore</Link></li>
+              <li><Link className="nav-link" href="/contact">Contact</Link></li>
             </ul>
           </nav>
         </header>
