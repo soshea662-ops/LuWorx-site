@@ -1,6 +1,7 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion/client"
+
 
 export default function LuWorxHomepage() {
   return (
