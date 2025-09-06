@@ -5,7 +5,6 @@ import Nav from "../components/NavHeader"
 export default function MediaPage() {
   return (
     <div className="min-h-screen bg-white text-gray-800">
-      <Nav />
       <div className="px-6 py-16 max-w-5xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">LuWorx Media & Publishing</h1>
         <p className="text-lg text-gray-600 mb-10">
