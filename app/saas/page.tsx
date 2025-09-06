@@ -1,6 +1,6 @@
 "use client"
 
-import Nav from "../components/Nav"
+import Nav from "../components/NavHeader"
 
 export default function SaaSPage() {
   return (
