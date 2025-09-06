@@ -28,5 +28,5 @@ export default function LuWorxHomepage() {
         <p>&copy; {new Date().getFullYear()} LuWorx LLC. All rights reserved.</p>
       </footer>
     </div>
-  )
+  );
 }
