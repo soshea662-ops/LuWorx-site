@@ -51,13 +51,12 @@ export default function LuWorxHomepage() {
 </section>
 
 
-      {/* Our Divisions */}
-<section id="divisions" className="py-20 bg-gray-50">
+      <section id="divisions" className="py-20 bg-white text-black">
   <h2 className="text-3xl font-bold text-center mb-12">Our Divisions</h2>
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
     
     {/* Digital Marketing */}
-    <Card className="rounded-2xl shadow-lg hover:shadow-xl transition">
+    <Card className="rounded-2xl border border-gray-300 bg-white shadow-sm">
       <CardHeader>
         <CardTitle>Digital Marketing</CardTitle>
       </CardHeader>
@@ -66,14 +65,14 @@ export default function LuWorxHomepage() {
           SEO, SEM, web design, and social media campaigns to help small 
           businesses grow their presence.
         </p>
-        <Button asChild className="w-full bg-green-800 text-white rounded-2xl">
+        <Button asChild className="w-full bg-green-600 text-white rounded-2xl hover:bg-green-700">
           <Link href="/digital">Learn More</Link>
         </Button>
       </CardContent>
     </Card>
 
-    {/* SaaS Solutions */}
-    <Card className="rounded-2xl shadow-lg hover:shadow-xl transition">
+    {/* SaaS */}
+    <Card className="rounded-2xl border border-gray-300 bg-white shadow-sm">
       <CardHeader>
         <CardTitle>SaaS Solutions</CardTitle>
       </CardHeader>
@@ -82,14 +81,14 @@ export default function LuWorxHomepage() {
           Innovative tools like PursuitPro for AEC proposals and FraudShield 
           for fraud prevention — scalable SaaS for modern needs.
         </p>
-        <Button asChild className="w-full bg-green-800 text-white rounded-2xl">
+        <Button asChild className="w-full bg-green-600 text-white rounded-2xl hover:bg-green-700">
           <Link href="/saas">Discover SaaS</Link>
         </Button>
       </CardContent>
     </Card>
 
-    {/* Media & Publishing */}
-    <Card className="rounded-2xl shadow-lg hover:shadow-xl transition">
+    {/* Media */}
+    <Card className="rounded-2xl border border-gray-300 bg-white shadow-sm">
       <CardHeader>
         <CardTitle>Media & Publishing</CardTitle>
       </CardHeader>
@@ -98,14 +97,14 @@ export default function LuWorxHomepage() {
           From KDP puzzle books to digital courses and content, we create 
           knowledge-driven products.
         </p>
-        <Button asChild className="w-full bg-green-800 text-white rounded-2xl">
+        <Button asChild className="w-full bg-green-600 text-white rounded-2xl hover:bg-green-700">
           <Link href="/media">Explore Media</Link>
         </Button>
       </CardContent>
     </Card>
-
   </div>
 </section>
+
 
 
       {/* Footer */}
