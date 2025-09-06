@@ -9,7 +9,7 @@ export default function LuWorxHomepage() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
-      <section className="text-center py-20 bg-gradient-to-r from-green-900 to-green-700 text-white">
+      <section className="text-center py-20 bg-black text-white">
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
