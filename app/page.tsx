@@ -1,13 +1,16 @@
 "use client"
 
-import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card"
-import { Button } from "./components/ui/button"
-import Link from "next/link"
 import { motion } from "framer-motion"
 import NavHeader from "./components/NavHeader"
 
+export default function LuWorxHomepage() {
+  return (
+    <div className="min-h-screen bg-black text-white flex flex-col">
+      {/* Navbar */}
+      <NavHeader />
+
       {/* Hero Section */}
-      <section className="text-center py-20 bg-black text-white">
+      <main className="flex-1 flex flex-col items-center justify-center text-center px-6">
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -19,12 +22,12 @@ import NavHeader from "./components/NavHeader"
         <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
           Building digital solutions across SaaS, Marketing, and Media.
         </p>
-      </section>
+      </main>
 
       {/* Footer */}
       <footer className="py-8 bg-black text-center border-t border-gray-700">
         <p>&copy; {new Date().getFullYear()} LuWorx LLC. All rights reserved.</p>
       </footer>
     </div>
-  );
+  )
 }
