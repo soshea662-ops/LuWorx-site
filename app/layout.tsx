@@ -1,14 +1,14 @@
 import "./globals.css";
 import NavHeader from "./components/NavHeader";
-import { ReactNode } from "react";
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className="bg-black text-white">
-        <NavHeader />
+        <NavHeader />   {/* ✅ Navbar here, applies to all pages */}
         {children}
       </body>
     </html>
   );
 }
+
