@@ -35,7 +35,8 @@ export default function NavHeader() {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="absolute top-16 right-6 bg-black border border-gray-700 rounded-lg shadow-lg p-4 flex flex-col space-y-4 md:hidden">
+        <div className="absolute top-16 right-6 z-50 bg-black border border-gray-700 rounded-lg shadow-lg p-4 flex flex-col space-y-4 md:hidden">
+
           <Link href="/" className="hover:text-green-500" onClick={() => setIsOpen(false)}>Home</Link>
           <Link href="/about" className="hover:text-green-500" onClick={() => setIsOpen(false)}>Our Story</Link>
           <Link href="/explore" className="hover:text-green-500" onClick={() => setIsOpen(false)}>Explore</Link>
