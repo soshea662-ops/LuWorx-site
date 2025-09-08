@@ -1,60 +1,32 @@
-"use client"
+"use client";
+import Image from "next/image";
 
-import { useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
-
-export default function NavHeader() {
-  const [isOpen, setIsOpen] = useState(false)
-
+export default function LuWorxHomepage() {
   return (
-    <header className="flex items-center justify-between px-6 py-4 bg-black text-white shadow-md">
-      {/* Logo + Brand */}
-      <div className="flex items-center space-x-3">
-        <Link href="/">
-          <Image
-            src="/logo.png"
-            alt="LuWorx Logo"
-            width={40}
-            height={40}
-            className="rounded"
-          />
-        </Link>
-        <Link href="/" className="text-2xl font-bold hover:text-green-500">
-          LuWorx
-        </Link>
-      </div>
-
-      {/* Desktop Nav */}
-      <nav className="hidden md:flex space-x-8">
-        <Link href="/" className="hover:text-green-500">Home</Link>
-        <Link href="/about" className="hover:text-green-500">Our Story</Link>
-        <Link href="/explore" className="hover:text-green-500">Explore</Link>
-        <Link href="/contact" className="hover:text-green-500">Contact</Link>
-      </nav>
-
-      {/* Mobile Menu Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden p-2 focus:outline-none"
+    <div className="min-h-screen flex flex-col bg-black text-white">
+      {/* Hero Section */}
+      <section
+        className="flex-1 flex flex-col items-center justify-center text-center px-6 relative bg-cover bg-center"
+        style={{ backgroundImage: "url('/hero-bg.jpg')" }} // <-- Your image here
       >
-        {/* Hamburger icon */}
-        <div className="space-y-1">
-          <span className="block w-6 h-0.5 bg-white"></span>
-          <span className="block w-6 h-0.5 bg-white"></span>
-          <span className="block w-6 h-0.5 bg-white"></span>
-        </div>
-      </button>
+        {/* Optional overlay for dark effect */}
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
-      {/* Mobile Dropdown Menu */}
-      {isOpen && (
-        <nav className="absolute top-16 left-0 w-full bg-black text-center md:hidden py-6 space-y-4">
-          <Link href="/" className="block hover:text-green-500" onClick={() => setIsOpen(false)}>Home</Link>
-          <Link href="/about" className="block hover:text-green-500" onClick={() => setIsOpen(false)}>Our Story</Link>
-          <Link href="/explore" className="block hover:text-green-500" onClick={() => setIsOpen(false)}>Explore</Link>
-          <Link href="/contact" className="block hover:text-green-500" onClick={() => setIsOpen(false)}>Contact</Link>
-        </nav>
-      )}
-    </header>
-  )
+        {/* Content */}
+        <div className="relative z-10">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            LuWorx: Many Skills. One Vision.
+          </h1>
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+            Building digital solutions across SaaS, Marketing, and Media.
+          </p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 bg-black text-center border-t border-gray-700">
+        <p>&copy; {new Date().getFullYear()} LuWorx LLC. All rights reserved.</p>
+      </footer>
+    </div>
+  );
 }
