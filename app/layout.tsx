@@ -1,15 +1,13 @@
-export const metadata = {
-  title: "LuWorx",
-  description: "Many Skills. One Vision.",
-}
+import "./globals.css";
+import NavHeader from "./components/NavHeader";
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-black text-white">
-        <NavHeader />   {/* ✅ Navbar here, shows on every page */}
+        <NavHeader />
         {children}
       </body>
     </html>
-  )
+  );
 }
