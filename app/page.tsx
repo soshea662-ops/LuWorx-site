@@ -10,14 +10,14 @@ export default function LuWorxHomepage() {
     <div className="min-h-screen flex flex-col bg-black text-white">
       {/* Hero Section */}
       <main className="flex-1 flex flex-col items-center justify-center text-center px-6">
-        <Motion.motion.h1
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-6xl font-bold mb-6"
-        >
-          LuWorx: Many Skills. One Vision.
-        </Motion.motion.h1>
+        <Motion.h1
+  initial={{ opacity: 0, y: -30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="text-4xl md:text-6xl font-bold mb-6"
+>
+  LuWorx: Many Skills. One Vision.
+</Motion.h1>
         <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
           Building digital solutions across SaaS, Marketing, and Media.
         </p>
