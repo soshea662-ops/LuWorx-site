@@ -1,27 +1,27 @@
 "use client";
-
-import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
-import { Button } from "./components/ui/button";
-import Link from "next/link";
+import Image from "next/image";
 
 export default function LuWorxHomepage() {
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
       {/* Hero Section */}
-      <main className="flex-1 flex flex-col items-center justify-center text-center px-6">
-        <motion.h1
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-6xl font-bold mb-6"
-        >
-          LuWorx: Many Skills. One Vision.
-        </motion.h1>
-        <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-          Building digital solutions across SaaS, Marketing, and Media.
-        </p>
-      </main>
+      <section
+        className="flex-1 flex flex-col items-center justify-center text-center px-6 relative bg-cover bg-center"
+        style={{ backgroundImage: "url('/hero-bg.png')" }} // <-- Your image here
+      >
+        {/* Optional overlay for dark effect */}
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
+        {/* Content */}
+        <div className="relative z-10">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            LuWorx: Many Skills. One Vision.
+          </h1>
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+            Building digital solutions across SaaS, Marketing, and Media.
+          </p>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="py-8 bg-black text-center border-t border-gray-700">
