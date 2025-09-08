@@ -9,7 +9,7 @@ export default function ExplorePage() {
         </p>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold">Why Explore?</h2>
+          <h2 className="text-2xl font-semibold">Why LuWorx?</h2>
           <ul className="list-disc list-inside space-y-2 text-gray-300">
             <li><strong>Cutting-Edge Tech:</strong> Stay ahead with AI, automation, and smart solutions.</li>
             <li><strong>Creative Impact:</strong> Design, branding, and media built to inspire and connect.</li>
