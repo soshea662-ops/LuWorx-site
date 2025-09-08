@@ -1,11 +1,9 @@
 "use client";
-
 import { motion } from "framer-motion";
 
 export default function LuWorxHomepage() {
   return (
-    <div className="min-h-screen flex flex-col bg-black text-white">
-      {/* Hero Section */}
+    <div className="min-h-screen flex flex-col">
       <main className="flex-1 flex flex-col items-center justify-center text-center px-6">
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
@@ -20,7 +18,6 @@ export default function LuWorxHomepage() {
         </p>
       </main>
 
-      {/* Footer */}
       <footer className="py-8 bg-black text-center border-t border-gray-700">
         <p>&copy; {new Date().getFullYear()} LuWorx LLC. All rights reserved.</p>
       </footer>
