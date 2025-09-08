@@ -1,53 +1,19 @@
 "use client";
 
-import { useState } from "react";
+<<<<<<< HEAD
 import { motion } from "framer-motion";
+=======
+import { motion } from "framer-motion";  // ✅ correct import
+>>>>>>> 068850e (Update homepage with new design and fixes)
+import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
+import { Button } from "./components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function LuWorxHomepage() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
-      {/* ✅ Navbar */}
-      <header className="flex items-center justify-between px-6 py-4 bg-black border-b border-gray-800 relative">
-        <div className="flex items-center space-x-3">
-          <Image src="/logo.png" alt="LuWorx Logo" width={40} height={40} />
-          <span className="text-2xl font-bold">LuWorx</span>
-        </div>
-
-        <nav className="hidden md:flex space-x-8">
-          <Link href="/" className="hover:text-green-500">Home</Link>
-          <Link href="/about" className="hover:text-green-500">Our Story</Link>
-          <Link href="/explore" className="hover:text-green-500">Explore</Link>
-          <Link href="/contact" className="hover:text-green-500">Contact</Link>
-        </nav>
-
-        {/* Mobile menu button */}
-        <button
-          className="md:hidden flex flex-col space-y-1"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <span className="block w-6 h-0.5 bg-white"></span>
-          <span className="block w-6 h-0.5 bg-white"></span>
-          <span className="block w-6 h-0.5 bg-white"></span>
-        </button>
-
-        {menuOpen && (
-          <div className="absolute top-16 right-0 w-48 bg-black border border-gray-700 rounded-lg shadow-lg md:hidden">
-            <nav className="flex flex-col p-4 space-y-4">
-              <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
-              <Link href="/about" onClick={() => setMenuOpen(false)}>Our Story</Link>
-              <Link href="/explore" onClick={() => setMenuOpen(false)}>Explore</Link>
-              <Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
-            </nav>
-          </div>
-        )}
-      </header>
-
-      {/* ✅ Hero Section */}
-      <main className="flex-1 flex flex-col items-center justify-center text-center px-6 relative">
+      {/* Hero Section */}
+      <main className="flex-1 flex flex-col items-center justify-center text-center px-6">
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -56,12 +22,20 @@ export default function LuWorxHomepage() {
         >
           LuWorx: Many Skills. One Vision.
         </motion.h1>
+
         <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
           Building digital solutions across SaaS, Marketing, and Media.
         </p>
+<<<<<<< HEAD
+=======
+
+        <Button asChild size="lg" className="rounded-2xl bg-green-600 text-white font-semibold">
+          <Link href="#divisions">Explore Our Divisions</Link>
+        </Button>
+>>>>>>> 068850e (Update homepage with new design and fixes)
       </main>
 
-      {/* ✅ Footer */}
+      {/* Footer */}
       <footer className="py-8 bg-black text-center border-t border-gray-700">
         <p>&copy; {new Date().getFullYear()} LuWorx LLC. All rights reserved.</p>
       </footer>
