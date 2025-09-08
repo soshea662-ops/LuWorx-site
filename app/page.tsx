@@ -1,39 +1,17 @@
 "use client";
 
-<<<<<<< HEAD
-import { motion } from "framer-motion";
-=======
-import { motion } from "framer-motion";  // ✅ correct import
->>>>>>> 068850e (Update homepage with new design and fixes)
-import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
-import { Button } from "./components/ui/button";
-import Link from "next/link";
-
 export default function LuWorxHomepage() {
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
       {/* Hero Section */}
-      <main className="flex-1 flex flex-col items-center justify-center text-center px-6">
-        <motion.h1
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-6xl font-bold mb-6"
-        >
+      <section className="flex-1 flex flex-col items-center justify-center text-center px-6 relative">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">
           LuWorx: Many Skills. One Vision.
-        </motion.h1>
-
+        </h1>
         <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
           Building digital solutions across SaaS, Marketing, and Media.
         </p>
-<<<<<<< HEAD
-=======
-
-        <Button asChild size="lg" className="rounded-2xl bg-green-600 text-white font-semibold">
-          <Link href="#divisions">Explore Our Divisions</Link>
-        </Button>
->>>>>>> 068850e (Update homepage with new design and fixes)
-      </main>
+      </section>
 
       {/* Footer */}
       <footer className="py-8 bg-black text-center border-t border-gray-700">
