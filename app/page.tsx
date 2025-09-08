@@ -1,12 +1,10 @@
 "use client";
-import { motion } from "framer-motion"; // ✅ use lowercase motion
-import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
-import { Button } from "./components/ui/button";
-import Link from "next/link";
+
+import { motion } from "framer-motion";
 
 export default function LuWorxHomepage() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-black text-white">
       {/* Hero Section */}
       <main className="flex-1 flex flex-col items-center justify-center text-center px-6">
         <motion.h1
