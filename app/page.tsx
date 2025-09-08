@@ -1,23 +1,22 @@
 "use client";
-
-import * as Motion from "framer-motion";
+import { motion } from "framer-motion"; // ✅ use lowercase motion
 import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
 import { Button } from "./components/ui/button";
 import Link from "next/link";
 
 export default function LuWorxHomepage() {
   return (
-    <div className="min-h-screen flex flex-col bg-black text-white">
+    <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
       <main className="flex-1 flex flex-col items-center justify-center text-center px-6">
-        <Motion.h1
-  initial={{ opacity: 0, y: -30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
-  className="text-4xl md:text-6xl font-bold mb-6"
->
-  LuWorx: Many Skills. One Vision.
-</Motion.h1>
+        <motion.h1
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-6xl font-bold mb-6"
+        >
+          LuWorx: Many Skills. One Vision.
+        </motion.h1>
         <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
           Building digital solutions across SaaS, Marketing, and Media.
         </p>
