@@ -1,48 +1,60 @@
 "use client"
 
-import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card"
-import { Button } from "./components/ui/button"
+import { useState } from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import Image from "next/image"
 
-function NavHeader() {
+export default function NavHeader() {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
-    <header className="flex items-center justify-between px-6 py-4 bg-green-900 text-white shadow-md">
-      <Link href="/" className="text-xl font-bold">LuWorx</Link>
-      <nav className="space-x-6 hidden md:flex">
-        <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
-        <Link href="/digital">Digital Marketing</Link>
-        <Link href="/saas">SaaS</Link>
-        <Link href="/media">Media</Link>
-        <Link href="/contact">Contact</Link>
+    <header className="flex items-center justify-between px-6 py-4 bg-black text-white shadow-md">
+      {/* Logo + Brand */}
+      <div className="flex items-center space-x-3">
+        <Link href="/">
+          <Image
+            src="/logo.png"
+            alt="LuWorx Logo"
+            width={40}
+            height={40}
+            className="rounded"
+          />
+        </Link>
+        <Link href="/" className="text-2xl font-bold hover:text-green-500">
+          LuWorx
+        </Link>
+      </div>
+
+      {/* Desktop Nav */}
+      <nav className="hidden md:flex space-x-8">
+        <Link href="/" className="hover:text-green-500">Home</Link>
+        <Link href="/about" className="hover:text-green-500">Our Story</Link>
+        <Link href="/explore" className="hover:text-green-500">Explore</Link>
+        <Link href="/contact" className="hover:text-green-500">Contact</Link>
       </nav>
-    </header>
-  )
-}
 
-export default function LuWorxHomepage() {
-  return (
-    <div className="min-h-screen bg-white text-gray-800">
-      <NavHeader />
-      {/* Hero Section */}
-      <section className="text-center py-20 bg-gradient-to-r from-green-900 to-green-700 text-white">
-        <motion.h1
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-6xl font-bold mb-6"
-        >
-          LuWorx: Many Skills. One Vision.
-        </motion.h1>
-        <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-          Building digital solutions across SaaS, Marketing, and Media.
-        </p>
-        <Button asChild size="lg" className="rounded-2xl bg-white text-green-800 font-semibold">
-          <Link href="#divisions">Explore Our Divisions</Link>
-        </Button>
-      </section>
-      {/* ... rest of homepage sections */}
-    </div>
+      {/* Mobile Menu Button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="md:hidden p-2 focus:outline-none"
+      >
+        {/* Hamburger icon */}
+        <div className="space-y-1">
+          <span className="block w-6 h-0.5 bg-white"></span>
+          <span className="block w-6 h-0.5 bg-white"></span>
+          <span className="block w-6 h-0.5 bg-white"></span>
+        </div>
+      </button>
+
+      {/* Mobile Dropdown Menu */}
+      {isOpen && (
+        <nav className="absolute top-16 left-0 w-full bg-black text-center md:hidden py-6 space-y-4">
+          <Link href="/" className="block hover:text-green-500" onClick={() => setIsOpen(false)}>Home</Link>
+          <Link href="/about" className="block hover:text-green-500" onClick={() => setIsOpen(false)}>Our Story</Link>
+          <Link href="/explore" className="block hover:text-green-500" onClick={() => setIsOpen(false)}>Explore</Link>
+          <Link href="/contact" className="block hover:text-green-500" onClick={() => setIsOpen(false)}>Contact</Link>
+        </nav>
+      )}
+    </header>
   )
 }
