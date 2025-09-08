@@ -7,8 +7,6 @@ export default function LuWorxHomepage() {
     <div className="min-h-screen flex flex-col bg-black text-white">
       {/* Hero Section */}
       <section
-        className="flex-1 flex flex-col items-center justify-center text-center px-6 relative bg-cover bg-center"
-        style={{ backgroundImage: "url('/hero-bg.jpg')" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
         <div className="relative z-10">
