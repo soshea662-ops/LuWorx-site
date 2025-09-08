@@ -1,6 +1,3 @@
-import "./globals.css"
-import NavHeader from "./components/NavHeader"
-
 export const metadata = {
   title: "LuWorx",
   description: "Many Skills. One Vision.",
