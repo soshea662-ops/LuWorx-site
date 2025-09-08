@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion/dom";
+import { motion } from "framer-motion/dist/framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card"
 import { Button } from "./components/ui/button"
 import Link from "next/link"
