@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
+ 
 export default function LuWorxHomepage() {
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
