@@ -30,11 +30,6 @@ export default function LuWorxHomepage() {
           </motion.p>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="py-8 bg-black text-center border-t border-gray-700">
-        <p>&copy; {new Date().getFullYear()} LuWorx LLC. All rights reserved.</p>
-      </footer>
     </div>
   );
 }
